@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const expireTime = 7*24*60*60*1000; // ek din
+const expireTime = 7*24*60*60*1000; 
 function setUser(user){
     return jwt.sign(
         {
