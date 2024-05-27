@@ -7,7 +7,7 @@ module.exports.register = async (req, res, next) => {
         await user.save();
         if(user){
             const token=setUser(user)
-            console.log('User logged in:',token);
+            // console.log('User logged in:',token);
             
             res.cookie("uuid", token, {
             withCredentials:true,  
@@ -43,7 +43,7 @@ module.exports.login = async (req, res, next) => {
         );
         if(user){
             const token=setUser(user)
-            console.log('User logged in:',token);
+            // console.log('User logged in:',token);
             
             res.cookie("uuid", token, {
                 withCredentials:true,  
@@ -51,8 +51,8 @@ module.exports.login = async (req, res, next) => {
                 MaxAge: 7*24*60*60*1000,
             
                 });
-            console.log("sending cookie")
-            res.status(200).json({ name: user.name });
+            // console.log("sending cookie")
+            res.status(200).json({ name: user.name  });
             
         }
         else{

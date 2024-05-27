@@ -4,6 +4,7 @@ const cors = require('cors');
 const productRouter = require('./routes/product')
 const filterRouter = require('./routes/filter')
 const userRouter = require('./routes/user')
+const stripeRouter = require('./routes/stripe')
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const app = express();
@@ -12,7 +13,7 @@ require("dotenv").config();
 app.use(cookieParser());
 app.use(cors(
     {
-        origin: 'http://localhost:3000',
+        origin: process.env.REACT_APP_URL,
         credentials: true,
     }
 ));
@@ -30,6 +31,8 @@ app.use('/music',productRouter)
 app.use('/filter',filterRouter)
 
 app.use('/user',userRouter)
+
+app.use('/stripe',stripeRouter)
 
 app.listen(port, () => {
     console.log('Server started on port', port);

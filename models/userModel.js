@@ -27,7 +27,7 @@ userSchema.statics.login = async function(emailandnumber,password){
     if(user){
         // const salt = await bcrypt.genSalt();
         // console.log("password",bcrypt.hash(user.password,salt))
-        console.log(password,user.password)
+        // console.log(password,user.password)
         const auth=await bcrypt.compare(password,user.password);
         // console.log("auth",auth)    
         if(auth){

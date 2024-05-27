@@ -16,7 +16,7 @@ router.get('/headphone_type',async(req,res)=>{
 try{
     const uniqueHeadphonetype =await MusicCart.distinct("Connectivity_Type");
     res.json(uniqueHeadphonetype);
-} catch {
+} catch (error) {
     console.log('Error getting headphone type:', error);
     res.status(500).send('Error getting headphone type');
 }
