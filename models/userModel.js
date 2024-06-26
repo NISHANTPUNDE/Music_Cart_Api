@@ -23,7 +23,7 @@ userSchema.pre('save',async function(next){
 
 userSchema.statics.login = async function(emailandnumber,password){
     const user=await this.findOne( {$or: [{ email: emailandnumber }, { phoneNumber: emailandnumber }]});  
-    console.log("user",user)
+    // console.log("user",user)
     if(user){
         // const salt = await bcrypt.genSalt();
         // console.log("password",bcrypt.hash(user.password,salt))

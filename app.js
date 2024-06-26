@@ -9,12 +9,12 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const app = express();
 app.use(bodyParser.json());
-require("dotenv").config();
+require("dotenv").config(); 
 app.use(cookieParser());
 app.use(cors(
     {
         origin: process.env.REACT_APP_URL,
-        credentials: true,
+        credentials: false,
     }
 ));
 const port = process.env.PORT || 3005;

@@ -52,7 +52,7 @@ module.exports.login = async (req, res, next) => {
             
                 });
             // console.log("sending cookie")
-            res.status(200).json({ name: user.name  });
+            res.status(200).json({ name: user.name,email: user.email  });
             
         }
         else{
