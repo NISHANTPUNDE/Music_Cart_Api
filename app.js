@@ -13,7 +13,7 @@ require("dotenv").config();
 app.use(cookieParser());
 app.use(cors(
     {
-        origin: process.env.REACT_APP_URL,
+        origin: process.env.REACT_APP_URL || 'http://localhost:3000',
         credentials: true,
     }
 ));
